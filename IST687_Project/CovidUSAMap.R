@@ -1,4 +1,5 @@
 #Plot the data for number of Confirmed cases by State (USA)
+library(ggplot2)
 
 #Importing data for the US covid cases by state map
 covid.US <- read.csv("data-AlBNV.csv")
@@ -24,5 +25,5 @@ map.lin.covid.US <- ggplot(covid.US, aes(map_id=Province.State)) +
   expand_limits(x = us$long, y = us$lat) + 
   xlab("Longitude") + ylab("Latitude") +
   coord_map() +
-  ggtitle("COVID-19 Cases in US by State", subtitle = "Data from 2020-03-18")
+  ggtitle("COVID-19 Cases in US by State", subtitle = paste("Data from", covid.US$Last.Update))
 map.lin.covid.US

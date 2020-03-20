@@ -1,7 +1,7 @@
 #Histogram of 10 countries with most confirmed cases
 orderedcovid <- covid.Countries[order(-covid.Countries$`2020-03-18`)[1:10],]
                                 
-ggplot(orderedcovid) + 
+column.Country <- ggplot(orderedcovid) + 
   geom_col(aes(x = factor(reorder(orderedcovid$worldCountries, 
                           orderedcovid$`2020-03-18`)), 
                y = orderedcovid$`2020-03-18`,
@@ -16,3 +16,4 @@ ggplot(orderedcovid) +
   ylab("Confirmed Cases") +
   xlab(NULL) +
   ggtitle("Countries with Highest Confirmed Cases", subtitle="Data from 2020-03-18")
+column.Country

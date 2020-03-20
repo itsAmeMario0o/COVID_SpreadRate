@@ -23,7 +23,7 @@ create_dfCountries <- function(){
   #Remove Province, Lat/Lon, and Mar.10 data
   dfCountries <- dfCountries[,-c(1,3,4,53)]
   #Remove rows where no cases have been found as of 3/9/2020
-  dfCountries <- dfCountries[dfCountries$X3.9.20 > 0,]
+  dfCountries <- dfCountries[dfCountries$X3.18.20 > 0,]
   colnames(dfCountries) <- gsub("X","",colnames(dfCountries))
   colnames(dfCountries) <- gsub("\\.","/",colnames(dfCountries))
   colnames(dfCountries) <- as.Date(colnames(dfCountries), format="%m/%d/%y")
@@ -32,3 +32,4 @@ create_dfCountries <- function(){
 }
 
 dfCountries <- create_dfCountries()
+write.csv(worldCountries, "List of Map Countries")
