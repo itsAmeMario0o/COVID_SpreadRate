@@ -3,6 +3,7 @@ install.packages("gganimate")
 library(gganimate)
 install.packages("gifski")
 library(gifski)
+library(ggplot2)
 
 ###TEST CODE
 #Plot world map with confirmed cases by country
@@ -56,7 +57,8 @@ column.Country3 <- ggplot(orderedcovid.long) +
   theme(axis.text.x = element_text(size=15),
         axis.text.y = element_text(size=15),
         plot.title = element_text(face="bold", size=25),
-        plot.subtitle = element_text(size=15)) +
+        plot.subtitle = element_text(size=15),
+        axis.title = element_text(size=20)) +
   transition_time(Date)
 column.Country3
 
